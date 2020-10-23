@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+
+<main class="page pricing-table-page">
+  <h2 class="text-center mt-5 mb-5">Home</h2>
+  <section class="mt-5 mb-5">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-6">
+    <img src="{{house.house_image.url}}" class="img-fluid">
+    </div>
+    <div class="col-sm-6">
+    <p>{{house.price}}</p>
+    </div>
+
+    <div>
+    </div>
+  </section>
+</main>
+
+{% endblock body %}
