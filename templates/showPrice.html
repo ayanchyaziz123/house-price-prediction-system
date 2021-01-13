@@ -1,16 +1,19 @@
 {% extends 'base.html' %} {% load static %} {% block body %}
 <div class="row">
- <div class="col-12 text-center">
- <div class="mt-5 mb-5">Show Price</div>
-<h1 class="mt-5 mb-5">prediction</h1>
-<p>Location : {{location}}</p>
-<p>Area : {{area}} sqft</p>
-<p>Bathroom : {{bathrooms}}</p>
-<p>BHK : {{bhk}}</p>
-<span>the predictable price is</span>
-<h1>&#8377; {{pre_price}} lkh</h1>
- <div>
- <div style="margin-top:200px;">
- </div>
+  <div class="col-12 text-center">
+    <div class="card shadow">
+      <div class="mt-5 mb-5">Show Price</div>
+      <h1 class="mt-5 mb-5">prediction</h1>
+      <p>Location : {{location}}</p>
+      <p>Area : {{area}} sqft</p>
+      <p>Bathroom : {{bathrooms}}</p>
+      <p>BHK : {{bhk}}</p>
+      <span>the predictable price is</span>
+      <h1>&#8377; {{pre_price}} lkh</h1>
+      <div></div>
+      <div style="margin-top: 200px"></div>
+    </div>
+    </div>
 </div>
-{% endblock body %}
+    {% endblock body %}
+  

@@ -49,12 +49,12 @@
                 type="range"
                 min="1"
                 max="20000"
-                value="2"
+                value="3000"
                 class="slider"
                 id="myRange"
                 name="Area"
               />
-              <p>Value: <span id="demoo"></span></p>
+              <p>Value: <span id="demoo"></span> sqft</p>
             </div>
           </div>
 
@@ -138,6 +138,7 @@
           <button type="button" class="btn btn-warning" data-dismiss="modal">
             Close
           </button>
+          {% csrf_token %}
           <button type="submit" class="btn btn-info">Submit</button>
         </div>
       </div>
@@ -176,6 +177,7 @@
               </a>
               <p>&#8377;
               {{house.price}}
+              lkh
               </p>
             </div>
           </div>
