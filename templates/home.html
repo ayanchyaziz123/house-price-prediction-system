@@ -37,6 +37,10 @@
         </div>
 
         <!-- Modal body -->
+
+        <form action="{% url 'showPrice' %}" method="post">
+                {% csrf_token %}
+
         <div class="modal-body">
           <div class="form-group">
             <label for="exampleInputEmail1">Area (Squre Feet)</label>
@@ -48,6 +52,7 @@
                 value="2"
                 class="slider"
                 id="myRange"
+                name="Area"
               />
               <p>Value: <span id="demoo"></span></p>
             </div>
@@ -56,21 +61,21 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">BHK</label><br />
             <div class="switch-field">
-              <input type="radio" id="radio-bhk-1" name="uiBHK" value="1" />
+              <input type="radio" id="radio-bhk-1" name="BHK" value="1" />
               <label for="radio-bhk-1">1</label>
               <input
                 type="radio"
                 id="radio-bhk-2"
-                name="uiBHK"
+                name="BHK"
                 value="2"
                 checked
               />
               <label for="radio-bhk-2">2</label>
-              <input type="radio" id="radio-bhk-3" name="uiBHK" value="3" />
+              <input type="radio" id="radio-bhk-3" name="BHK" value="3" />
               <label for="radio-bhk-3">3</label>
-              <input type="radio" id="radio-bhk-4" name="uiBHK" value="4" />
+              <input type="radio" id="radio-bhk-4" name="BHK" value="4" />
               <label for="radio-bhk-4">4</label>
-              <input type="radio" id="radio-bhk-5" name="uiBHK" value="5" />
+              <input type="radio" id="radio-bhk-5" name="BHK" value="5" />
               <label for="radio-bhk-5">5</label>
             </div>
           </div>
@@ -81,14 +86,14 @@
               <input
                 type="radio"
                 id="radio-bath-1"
-                name="uiBathrooms"
+                name="Bathrooms"
                 value="1"
               />
               <label for="radio-bath-1">1</label>
               <input
                 type="radio"
                 id="radio-bath-2"
-                name="uiBathrooms"
+                name="Bathrooms"
                 value="2"
                 checked
               />
@@ -96,21 +101,21 @@
               <input
                 type="radio"
                 id="radio-bath-3"
-                name="uiBathrooms"
+                name="Bathrooms"
                 value="3"
               />
               <label for="radio-bath-3">3</label>
               <input
                 type="radio"
                 id="radio-bath-4"
-                name="uiBathrooms"
+                name="Bathrooms"
                 value="4"
               />
               <label for="radio-bath-4">4</label>
               <input
                 type="radio"
                 id="radio-bath-5"
-                name="uiBathrooms"
+                name="Bathrooms"
                 value="5"
               />
               <label for="radio-bath-5">5</label>
@@ -119,12 +124,11 @@
 
           <div class="form-group">
             <label for="exampleFormControlSelect1">Location</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Tilagor</option>
-              <option>Majortila</option>
-              <option>Shaporan</option>
-              <option>4</option>
-              <option>5</option>
+            <select class="form-control" id="exampleFormControlSelect1" name="Location">
+              
+              {% for l in location %}
+              <option>{{l}}</option>
+              {% endfor %}
             </select>
           </div>
         </div>
@@ -134,11 +138,12 @@
           <button type="button" class="btn btn-warning" data-dismiss="modal">
             Close
           </button>
+          <button type="submit" class="btn btn-info">Submit</button>
         </div>
       </div>
     </div>
   </div>
-
+<form/>
   
 
   <!-- The Modal -->
@@ -169,7 +174,7 @@
                 more
               </p>
               </a>
-              <p>&#x09F3;
+              <p>&#8377;
               {{house.price}}
               </p>
             </div>
